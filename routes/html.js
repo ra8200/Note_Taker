@@ -1,5 +1,5 @@
-var appRouter = require("express").Router()
-var path = require("path")
+const appRouter = require("express").Router()
+const path = require("path")
 
 
 appRouter.get("/",function(req,res){
