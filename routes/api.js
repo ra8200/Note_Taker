@@ -12,7 +12,7 @@ appRouter.post("/api/notes",function(req,res){
     let recentNote = {
         id: Math.floor(Math.random()*100),
         title: req.body.title,
-        text:req.body.text
+        test:req.body.text
     }
 
     db.push(recentNote)
