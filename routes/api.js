@@ -1,6 +1,6 @@
-const appRouter = require("express").Router()
-const  db = require("../db/db.json")
-const fs = require("fs")
+var appRouter = require("express").Router()
+var  db = require("../db/db.json")
+var fs = require("fs")
 
 
 appRouter.get("/api/notes",function(req,res){
@@ -9,7 +9,7 @@ appRouter.get("/api/notes",function(req,res){
     res.json(db)
 })
 appRouter.post("/api/notes",function(req,res){
-    let recentNote = {
+    const recentNote = {
         id: Math.floor(Math.random()*100),
         title: req.body.title,
         test:req.body.text
