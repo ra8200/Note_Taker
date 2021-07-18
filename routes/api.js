@@ -1,10 +1,10 @@
 var appRouter = require("express").Router()
-var  db = require("../db/db.json")
+// var  db = require("../db/db.json")
 var fs = require("fs")
-
+var db = JSON.parse(fs.readFileSync("./db/db.json","utf-8"))
 
 appRouter.get("/api/notes",function(req,res){
-    db = JSON.parse(fs.readFileSync("./db/db.json","utf-8"))
+    // db = JSON.parse(fs.readFileSync("./db/db.json","utf-8"))
     console.log("Get",db)
     res.json(db)
 })
@@ -12,7 +12,7 @@ appRouter.post("/api/notes",function(req,res){
     const recentNote = {
         id: Math.floor(Math.random()*100),
         title: req.body.title,
-        test:req.body.text
+        text:req.body.text
     }
 
     db.push(recentNote)
